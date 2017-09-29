@@ -1,0 +1,7 @@
+> setwd("~/CourseRA/ExplrData/Week 1 Project")
+> entiredata <- read.csv("household_power_consumption.txt", header = T, sep = ';', na.strings = "?", nrows = 2075259, check.names = F, stringsAsFactors = F, comment.char = "", quote = '\"')
+> dataview1 <- subset(entiredata, Date %in% c("1/2/2007", "2/2/2007"))
+> dataview1$Date <- as.Date(dataview1$Date, format = "$d/$m/$Y")
+> hist(dataview1$Global_active_power, main = "Global Active Power", xlab = "Global Active Power (kilowatts)", ylab = "Frequency", col = "Red")
+> png("plot1.png", width = 480, height = 480)
+> dev.off()
